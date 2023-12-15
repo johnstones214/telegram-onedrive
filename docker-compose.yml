@@ -9,7 +9,7 @@ services:
     #network_mode: host
     # If you're on Windows or macOS, use this, "xxxx" is your port in server_uri:
     ports:
-       - 1420:1420
+       - 3307:3307
 
     # volumes:
       # - /path/to/*.crt:/telegram-onedrive/server/ssl/server.crt
@@ -17,7 +17,7 @@ services:
       # - telegram-onedrive-session:/telegram-onedrive/session
 
     environment:
-      - server_uri=https://127.0.0.1:1420
+      - server_uri=https://127.0.0.1:3307
       - tg_bot_token=6474375449:AAGl2eBfMsbCev82AVdIBANjD4L7L4iQHf8
       - tg_api_id=22147341
       - tg_api_hash=934c035fbd516eae137ea9a426f58698
