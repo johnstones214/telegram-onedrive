@@ -17,15 +17,15 @@ services:
       # - telegram-onedrive-session:/telegram-onedrive/session
 
     environment:
-      - server_uri=$server_uri(must be https and port specified, like https://example.com:8080)
-      - tg_bot_token=$tg_bot_token
-      - tg_api_id=$tg_api_id
-      - tg_api_hash=$tg_api_hash
-      - tg_user_phone=$tg_user_phone(use international format, like +xxyyyyyyyyyyy)
+      - server_uri=https://127.0.0.1:8080
+      - tg_bot_token=6474375449:AAGl2eBfMsbCev82AVdIBANjD4L7L4iQHf8
+      - tg_api_id=22147341
+      - tg_api_hash=934c035fbd516eae137ea9a426f58698
+      - tg_user_phone=+17206575574
       - tg_user_name=$tg_user_name(optional, no @)
-      - od_client_id=$od_client_id
-      - od_client_secret=$od_client_secret
-      - remote_root_path=$remote_root_path(like /Videos/from-telegram)
+      - od_client_id=166d8e2a-55f2-4a26-9838-49d9aefcc445
+      - od_client_secret=cf32ec39-62b0-4f4a-b437-8a03b242edde
+      - remote_root_path=/DSML INTER
       - delete_flag=$delete_flag(optional, true or false, default to false)
     command: python main.py
 
