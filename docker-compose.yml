@@ -6,10 +6,10 @@ services:
     restart: always
 
     # If you're on Linux, use this:
-    network_mode: host
+    #network_mode: host
     # If you're on Windows or macOS, use this, "xxxx" is your port in server_uri:
-    # ports:
-    #   - xxxx:xxxx
+     ports:
+       - 8080:8080
 
     # volumes:
       # - /path/to/*.crt:/telegram-onedrive/server/ssl/server.crt
@@ -25,7 +25,7 @@ services:
       - tg_user_name=$tg_user_name(optional, no @)
       - od_client_id=166d8e2a-55f2-4a26-9838-49d9aefcc445
       - od_client_secret=cf32ec39-62b0-4f4a-b437-8a03b242edde
-      - remote_root_path=/DSML INTER
+      - remote_root_path=/Videos
       - delete_flag=$delete_flag(optional, true or false, default to false)
     command: python main.py
 
