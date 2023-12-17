@@ -6,10 +6,10 @@ services:
     restart: always
 
     # If you're on Linux, use this:
-    #network_mode: host
+    network_mode: host
     # If you're on Windows or macOS, use this, "xxxx" is your port in server_uri:
-    ports:
-       - 8000:8000
+    #ports:
+       #- 8000:8000
 
     # volumes:
       # - /path/to/*.crt:/telegram-onedrive/server/ssl/server.crt
@@ -18,13 +18,13 @@ services:
 
     environment:
       - server_uri=https://127.0.0.1:8000
-      - tg_bot_token=6474375449:AAGl2eBfMsbCev82AVdIBANjD4L7L4iQHf8
+      - tg_bot_token='6474375449:AAGl2eBfMsbCev82AVdIBANjD4L7L4iQHf8'
       - tg_api_id=22147341
-      - tg_api_hash=934c035fbd516eae137ea9a426f58698
+      - tg_api_hash='934c035fbd516eae137ea9a426f58698'
       - tg_user_phone=+17206575574
       - tg_user_name=$tg_user_name(optional, no @)
-      - od_client_id=166d8e2a-55f2-4a26-9838-49d9aefcc445
-      - od_client_secret=cf32ec39-62b0-4f4a-b437-8a03b242edde
+      - od_client_id='166d8e2a-55f2-4a26-9838-49d9aefcc445'
+      - od_client_secret='cf32ec39-62b0-4f4a-b437-8a03b242edde'
       - remote_root_path=/Videos
       - delete_flag=$delete_flag(optional, true or false, default to false)
     command: python main.py
