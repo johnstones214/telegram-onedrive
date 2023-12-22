@@ -6,7 +6,7 @@ services:
     restart: always
 
     # If you're on Linux, use this:
-    #network_mode: host
+    network_mode: host
     # If you're on Windows or macOS, use this, "xxxx" is your port in server_uri:
     #ports:
        #- 8000:8000
