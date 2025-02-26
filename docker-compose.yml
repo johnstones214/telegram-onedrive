@@ -24,7 +24,7 @@ services:
       - tg_user_phone=+17206575574
       - tg_user_name=davidarnold66
       - od_client_id=166d8e2a-55f2-4a26-9838-49d9aefcc445
-      - od_client_secret=rg.8Q~ybqclTTieEhaEgDHyh96UQPnRnfyD6aa4A
+      - od_client_secret=cDe8Q~Mix~_V~SqxqX3c.B.q9-uA0qO26UtQic3c
       - remote_root_path=/Videos
       - delete_flag=$delete_flag(optional, true or false, default to false)
     command: python main.py
