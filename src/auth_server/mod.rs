@@ -10,20 +10,21 @@ mod cert;
 mod handlers;
 
 use crate::{
-    env::{Env, ENV},
+    env::{ENV, Env},
     error::ResultExt,
 };
 use anyhow::{Context, Result};
 use auto_abort::AutoAbortHandle;
 use axum::{
-    routing::{get, post},
     Extension, Router,
+    routing::{get, post},
 };
 use axum_server::Handle;
 use cert::get_rustls_config;
 use handlers::{onedrive, telegram};
 use std::net::TcpListener;
 use tokio::sync::mpsc::{self, Receiver, Sender};
+use tower_http::services::ServeDir;
 
 #[derive(Clone)]
 struct SenderTG(Sender<String>);
@@ -44,6 +45,7 @@ pub async fn spawn() -> Result<(Receiver<String>, Receiver<String>, AutoAbortHan
     let (tx_od, rx_od) = mpsc::channel(1);
 
     let router = Router::new()
+        .nest_service("/static", ServeDir::new("./static"))
         .route(telegram::INDEX_PATH, get(telegram::index_handler))
         .route(telegram::CODE_PATH, post(telegram::code_handler))
         .route(onedrive::CODE_PATH, get(onedrive::code_handler))
