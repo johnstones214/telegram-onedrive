@@ -1,6 +1,7 @@
 *
 !src
 !lib
+!static
 !Cargo.toml
 !Cargo.lock
 !index.html
